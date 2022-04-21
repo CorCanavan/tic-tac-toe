@@ -3,24 +3,37 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./styles.css">
-    <!--   IF you are bringing in any external fonts, put the links here   -->
+    <title>Tic-caT-Toe</title>
   </head>
   <body>
     <main>
-      <aside>
-        <article>
-          <p>🐈‍⬛ </p>
+      <aside class="player-side">
+        <article class="player-info">
+          <span class="player-emoji">🐈‍⬛ </span>
           <h2>0 wins</h2>
         </article>
       </aside>
-      <section>
-        <header>
-          <h1>It's 🐈‍⬛'s turn</h1>
+      <section class="game-section">
+        <header class="game-header">
+          <h1>It's <span class="player-emoji">🐈‍⬛ </span>'s turn</h1>
         </header>
+        <div class="wrapper">
+          <section class="game-container">
+            <article class="box1 box"><span class="game-emoji">🐈‍⬛ </span></article>
+            <article class="box2 box"></article>
+            <article class="box3 box"></article>
+            <article class="box4 box"></article>
+            <article class="box5 box"><span class="game-emoji">🐕</span></article>
+            <article class="box6 box"></article>
+            <article class="box7 box"></article>
+            <article class="box8 box"></article>
+            <article class="box9 box"></article>
+        </section>
+      </div>
       </section>
-      <aside>
-        <article>
-          <p>🐕</p>
+      <aside class="player-side">
+        <article class="player-info">
+          <span class="player-emoji">🐕</span>
           <h2>0 wins</h2>
         </article>
       </aside>
