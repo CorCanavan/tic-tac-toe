@@ -45,7 +45,7 @@ h2 {
   display: flex;
   justify-content: center;
   font-size: x-large;
-  margin: 40px 0px 0px 0px;
+  margin: 40px 0px 40px 0px;
 }
 
 .wrapper {
@@ -55,7 +55,7 @@ h2 {
 
 .game-container {
   align-content: center;
-  height: 500px;
+  height: 311px;
   width: 50%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -74,18 +74,18 @@ h2 {
   border: 3px solid #FFA500;
 }
 
-.box1, .box2, .box3 {
+.box0, .box1, .box2 {
   border-top: 0;
 }
 
-.box1, .box4, .box7 {
+.box0, .box3, .box6 {
   border-left: 0;
 }
 
-.box7, .box8, .box9 {
+.box6, .box7, .box8 {
   border-bottom: 0;
 }
 
-.box3, .box6, .box9 {
+.box2, .box5, .box8 {
   border-right: 0;
 }
