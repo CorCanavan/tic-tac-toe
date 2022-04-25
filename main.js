@@ -2,9 +2,8 @@
 var game;
 
 // Query Selectors:
-var playerEmojiHeader = document.getElementById('currentPlayerEmoji');
 var gameBoard = document.getElementById('gameBoard');
-var gameHeader = document.getElementById('headerText');
+var gameHeader = document.getElementById('gameHeader');
 var player1Wins = document.getElementById('player1Wins');
 var player2Wins = document.getElementById('player2Wins');
 var boxes = document.querySelectorAll('.box');
@@ -24,23 +23,24 @@ function selectBox(e) {
     e.target.innerHTML =
     `<span class="game-emoji">${game.currentPlayer.token}</span>`;
     game.updateBoard(boxId);
-    game.checkForWinner()
-    game.changeTurn();
   }
 }
 
 function updateTurn() {
-  //do I need the entire header element html here?
-    playerEmojiHeader.innerText = `${game.currentPlayer.token}`;
+  gameHeader.innerHTML =
+  `<h1>It's <span class="player-emoji">${game.currentPlayer.token}</span>'s turn</h1>`
 }
 
 function declareWinner() {
-    gameHeader.innerText = `${game.currentPlayer.token} wins!`;
-    // gameHeader.innerHTML = `<h1><span class="player-emoji" id="currentPlayerEmoji">${game.currentPlayer.token}</span> wins!</h1>
-    updateWins();
+  gameHeader.innerHTML =
+  `<h1><span class="player-emoji">${game.currentPlayer.token}</span> wins!</h1>`;
+  updateWins();
+  setTimeout(() => {
     clearBoard();
-    instantiateGame();
-    // game.changeTurn();
+    game.resetGame();
+    gameHeader.innerHTML =
+    `<h1>It's <span class="player-emoji">${game.currentPlayer.token}</span>'s turn</h1>`
+  }, 2000);
 }
 
 function updateWins() {
@@ -54,11 +54,3 @@ function clearBoard() {
     boxes[i].innerHTML = "";
   }
 }
-
-// function clearBoard() {
-//   gameBoard.innerHTML = "";
-//   for (var i = 0; i < game.board.length; i++) {
-//     gameBoard.innerHTML +=
-//     `<article class="box${game.board[i]} box" id=${game.board[i]}></article>`;
-//   }
-// }

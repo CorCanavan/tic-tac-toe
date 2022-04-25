@@ -17,6 +17,14 @@ class Game {
     ];
   }
 
+  resetGame() {
+    this.hasWinner = false;
+    for (var i = 0; i < this.board.length; i++) {
+      this.board[i] = "";
+    }
+    this.changeTurn();
+  }
+
   changeTurn() {
     if (this.currentPlayer === this.player1) {
       this.currentPlayer = this.player2;
@@ -28,6 +36,10 @@ class Game {
 
   updateBoard(boxId) {
     this.board[boxId] = this.currentPlayer.id;
+    this.checkForWinner();
+      if (!this.hasWinner) {
+        this.changeTurn();
+    }
   }
 
   checkForWinner() {
@@ -42,10 +54,10 @@ class Game {
   }
 
   checkCombination(winningCombination) {
-    var counter = 0
+    var counter = 0;
     for (var i = 0; i < winningCombination.length; i++) {
-      var wombo = winningCombination[i]
-      var isBoardWombo = this.board[wombo] === this.currentPlayer.id
+      var wombo = winningCombination[i];
+      var isBoardWombo = this.board[wombo] === this.currentPlayer.id;
 
       if (isBoardWombo && counter <= 2) {
         counter++;
@@ -53,7 +65,7 @@ class Game {
 
       if (counter === 3) {
         this.hasWinner = true
-        declareWinner()
+        declareWinner();
         // console.log("INSIDE LOOP 2 : AND THE WINNER IS... ", this.currentPlayer.id, " !")
         break;
       }
