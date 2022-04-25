@@ -23,6 +23,7 @@ class Game {
     } else {
       this.currentPlayer = this.player1;
     }
+    updateTurn();
   }
 
   updateBoard(boxId) {
@@ -31,42 +32,37 @@ class Game {
 
   checkForWinner() {
     for (var i = 0; i < this.winningCombinations.length; i++) {
-
       if (this.hasWinner) {
-        break
+        return this.hasWinner;
       } else {
         var winningCombination = this.winningCombinations[i];
         this.checkCombination(winningCombination);
       }
-
     } // close first loop
-
   }
 
   checkCombination(winningCombination) {
-    let counter = 0
-
+    var counter = 0
     for (var i = 0; i < winningCombination.length; i++) {
-      const wombo = winningCombination[i]
-      const isBoardWombo = this.board[wombo] === this.currentPlayer.id
+      var wombo = winningCombination[i]
+      var isBoardWombo = this.board[wombo] === this.currentPlayer.id
 
       if (isBoardWombo && counter <= 2) {
-        counter++
+        counter++;
       }
 
       if (counter === 3) {
         this.hasWinner = true
-        console.log("INSIDE LOOP 2 : AND THE WINNER IS... ", this.currentPlayer.id, " !")
-        break
+        declareWinner()
+        // console.log("INSIDE LOOP 2 : AND THE WINNER IS... ", this.currentPlayer.id, " !")
+        break;
       }
 
      if (!isBoardWombo) {
-        counter = 0
-        break
+        counter = 0;
+        break;
       }
-
     }
-
   }
 
 }
