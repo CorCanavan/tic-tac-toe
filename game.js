@@ -4,6 +4,7 @@ class Game {
     this.player1 = new Player(1, "🐈‍⬛", 0);
     this.player2 = new Player(2, "🐕", 0);
     this.hasWinner = false
+    this.isDraw = false;
     this.currentPlayer = this.player1;
     this.winningCombinations = [
       [0, 1, 2],
@@ -19,6 +20,7 @@ class Game {
 
   resetGame() {
     this.hasWinner = false;
+    this.isDraw = false;
     for (var i = 0; i < this.board.length; i++) {
       this.board[i] = "";
     }
@@ -37,7 +39,7 @@ class Game {
   updateBoard(boxId) {
     this.board[boxId] = this.currentPlayer.id;
     this.checkForWinner();
-      if (!this.hasWinner) {
+      if (!this.hasWinner && !this.isDraw) {
         this.changeTurn();
     }
   }
@@ -50,7 +52,7 @@ class Game {
         var winningCombination = this.winningCombinations[i];
         this.checkCombination(winningCombination);
       }
-    } // close first loop
+    }
   }
 
   checkCombination(winningCombination) {
@@ -66,7 +68,6 @@ class Game {
       if (counter === 3) {
         this.hasWinner = true
         declareWinner();
-        // console.log("INSIDE LOOP 2 : AND THE WINNER IS... ", this.currentPlayer.id, " !")
         break;
       }
 
@@ -75,6 +76,10 @@ class Game {
         break;
       }
     }
-  }
 
+    if (!this.board.includes("") && !this.hasWinner) {
+      this.isDraw = true;
+      return declareDraw();
+    }
+  }
 }

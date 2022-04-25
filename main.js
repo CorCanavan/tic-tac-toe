@@ -43,6 +43,17 @@ function declareWinner() {
   }, 2000);
 }
 
+function declareDraw() {
+  gameHeader.innerHTML =
+  `<h1><span class="player-emoji"></span>It's a draw!</h1>`;
+  setTimeout(() => {
+    clearBoard();
+    game.resetGame();
+    gameHeader.innerHTML =
+    `<h1>It's <span class="player-emoji">${game.currentPlayer.token}</span>'s turn</h1>`
+  }, 2000);
+}
+
 function updateWins() {
   game.currentPlayer.increaseWins();
   player1Wins.innerText = `${game.player1.wins} wins`;
