@@ -23,6 +23,17 @@ function selectBox(e) {
     e.target.innerHTML =
     `<span class="game-emoji">${game.currentPlayer.token}</span>`;
     game.updateBoard(boxId);
+    updateDisplay();
+  }
+}
+
+function updateDisplay() {
+  if (game.hasWinner) {
+    declareWinner();
+  } else if (game.isDraw) {
+    declareDraw();
+  } else {
+    updateTurn();
   }
 }
 
@@ -35,16 +46,16 @@ function declareWinner() {
   gameHeader.innerHTML =
   `<h1><span class="player-emoji">${game.currentPlayer.token}</span> wins!</h1>`;
   updateWins();
-  resetDom();
+  resetDOM();
 }
 
 function declareDraw() {
   gameHeader.innerHTML =
   `<h1><span class="player-emoji"></span>It's a draw!</h1>`;
-  resetDom();
+  resetDOM();
 }
 
-function resetDom() {
+function resetDOM() {
   setTimeout(() => {
     clearBoard();
     game.resetGame();

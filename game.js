@@ -33,7 +33,6 @@ class Game {
     } else {
       this.currentPlayer = this.player1;
     }
-    updateTurn();
   }
 
   updateBoard(boxId) {
@@ -67,7 +66,6 @@ class Game {
 
       if (counter === 3) {
         this.hasWinner = true;
-        declareWinner();
         break;
       }
 
@@ -79,7 +77,6 @@ class Game {
 
     if (!this.board.includes("") && !this.hasWinner) {
       this.isDraw = true;
-      return declareDraw();
     }
   }
 }
