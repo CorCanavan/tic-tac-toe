@@ -57,11 +57,11 @@ Visit my repo link [here](https://github.com/CorCanavan/tic-tac-toe)
 ## Lessons Learned
 - There is SO MUCH that goes into bringing an application to life, even something as seemingly simple as a game of tic-tac-toe! I realized the importance of breaking down the project into sections (planning, HTML/CSS, JavaScript) and then whittling down each section into steps with smaller, more digestible pieces, and focusing on each individual, smaller piece at a time. It was really easy for me to get super overwhelmed by the project as a whole and then my brain would go in 7 different directions at once, so breaking it down was an absolute must.
 - Drawing out a spec of the app on paper first and deciding which HTML elements should make up each part before writing in the HTML file was beneficial. CSS grid came in really handy for creating the tic-tac-toe board!
-- Approaching the JavaScript portion was daunting; I found it helpful to take a giant step back and prioritize pseudocoding out the entire game in steps before diving into actually writing any code. The logic for checking for a winner really threw me for a loop (or 2)! :) It was interesting to figure out how to "translate" the game logic from plain speak into something the computer can understand and work with.
+- Approaching the JavaScript portion was daunting; I found it helpful to take a giant step back and prioritize pseudocoding out the entire game in steps before diving into actually writing any code. The logic for checking for a winner really threw me for a loop (or 2)! :smile: It was interesting to figure out how to "translate" the game logic from plain speak into something the computer can understand and work with.
 
 ## Project Specs
 - The spec for this project can be found [here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo-v2.html).
 
 ## Project Inspiration
 - The theme for Tic-caT-Toe was inspired by my own furries: :black_cat: Doc Holliday and Mesa :dog2:
-![IMG_8975](https://user-images.githubusercontent.com/97919748/165375173-3d165672-1d54-4b1d-b960-b071399ccd74.jpeg)
+![IMG_8975](https://user-images.githubusercontent.com/97919748/165383229-e763586f-6b35-4b88-8c23-a8fcabdd0110.jpeg)
