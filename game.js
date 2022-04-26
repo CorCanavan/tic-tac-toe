@@ -3,7 +3,7 @@ class Game {
     this.board = ["", "", "", "", "", "", "", "", ""];
     this.player1 = new Player(1, "🐈‍⬛", 0);
     this.player2 = new Player(2, "🐕", 0);
-    this.hasWinner = false
+    this.hasWinner = false;
     this.isDraw = false;
     this.currentPlayer = this.player1;
     this.winningCombinations = [
