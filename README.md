@@ -64,4 +64,4 @@ Visit my repo link [here](https://github.com/CorCanavan/tic-tac-toe)
 
 ## Project Inspiration
 - The theme for Tic-caT-Toe was inspired by my own furries: :black_cat: Doc Holliday and Mesa :dog2:
-![IMG_8975](https://user-images.githubusercontent.com/97919748/165383229-e763586f-6b35-4b88-8c23-a8fcabdd0110.jpeg)
+<img src="https://user-images.githubusercontent.com/97919748/165383229-e763586f-6b35-4b88-8c23-a8fcabdd0110.jpeg" width=50% height=50%>
