@@ -2,11 +2,11 @@
 var game;
 
 // Query Selectors:
-var gameBoard = document.getElementById('gameBoard');
-var gameHeader = document.getElementById('gameHeader');
-var player1Wins = document.getElementById('player1Wins');
-var player2Wins = document.getElementById('player2Wins');
-var boxes = document.querySelectorAll('.box');
+var gameBoard = document.getElementById("gameBoard");
+var gameHeader = document.getElementById("gameHeader");
+var player1Wins = document.getElementById("player1Wins");
+var player2Wins = document.getElementById("player2Wins");
+var boxes = document.querySelectorAll(".box");
 
 // Event Listeners:
 window.addEventListener("load", instantiateGame);
@@ -28,29 +28,28 @@ function selectBox(e) {
 
 function updateTurn() {
   gameHeader.innerHTML =
-  `<h1>It's <span class="player-emoji">${game.currentPlayer.token}</span>'s turn</h1>`
+  `<h1>It's <span class="player-emoji">${game.currentPlayer.token}</span>'s turn</h1>`;
 }
 
 function declareWinner() {
   gameHeader.innerHTML =
   `<h1><span class="player-emoji">${game.currentPlayer.token}</span> wins!</h1>`;
   updateWins();
-  setTimeout(() => {
-    clearBoard();
-    game.resetGame();
-    gameHeader.innerHTML =
-    `<h1>It's <span class="player-emoji">${game.currentPlayer.token}</span>'s turn</h1>`
-  }, 2000);
+  resetDom();
 }
 
 function declareDraw() {
   gameHeader.innerHTML =
   `<h1><span class="player-emoji"></span>It's a draw!</h1>`;
+  resetDom();
+}
+
+function resetDom() {
   setTimeout(() => {
     clearBoard();
     game.resetGame();
     gameHeader.innerHTML =
-    `<h1>It's <span class="player-emoji">${game.currentPlayer.token}</span>'s turn</h1>`
+    `<h1>It's <span class="player-emoji">${game.currentPlayer.token}</span>'s turn</h1>`;
   }, 2000);
 }
 

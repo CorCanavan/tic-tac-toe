@@ -66,7 +66,7 @@ class Game {
       }
 
       if (counter === 3) {
-        this.hasWinner = true
+        this.hasWinner = true;
         declareWinner();
         break;
       }
