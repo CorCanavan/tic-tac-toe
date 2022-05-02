@@ -32,7 +32,7 @@ Grab a friend to play Tic-caT-Toe and see who gets 3-in-a-row! Choose from eithe
 https://user-images.githubusercontent.com/97919748/165367781-19dca6d9-f08c-49e6-8f34-743945cc30a3.mov
 
 ## GitHub Link
-Visit my repo link [here](https://github.com/CorCanavan/tic-tac-toe)
+Visit my deployed link [here](https://corcanavan.github.io/tic-tac-toe/)
 
 ## Possible Future Extensions
 - Persist player win data using local storage in order for number of wins to persist across page refreshes.
